@@ -5,4 +5,4 @@ import matplotlib as plt
 import math
 
 titanicdata= pd.read_csv('DataSets\Titanic.csv')
-
+pd.DataFrame(titanicdata)
