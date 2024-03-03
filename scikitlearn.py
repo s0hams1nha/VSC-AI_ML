@@ -22,4 +22,4 @@ mod = GridSearchCV(
 
 X, y= load_boston(return_X_y=True)
 mod.fit(X, y)
-print(pd.DataFrame(mod.cv_results_))
+print(load_boston.head(10))
