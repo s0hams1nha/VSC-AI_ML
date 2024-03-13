@@ -37,13 +37,11 @@ correlation_matrix = numeric_columns.corr()
 
 # Plot the correlation matrix
 sns.heatmap(correlation_matrix, cmap="YlGnBu", annot=True)
-plt.show()
-
 
 print(titanic_data.head())
 print(titanic_data.info())
 
-
+#split dataset into training and testing while keeping same ratios for survival impacting columns
 split=StratifiedShuffleSplit(1, test_size=0.2)
 for train_indices, test_indices in split.split(titanic_data, titanic_data[["Survived", "Pclass", "Sex_female", "Sex_male"]]):
   strat_train_set = titanic_data.loc[train_indices]
@@ -54,5 +52,3 @@ strat_train_set["Pclass"].hist()
 plt.subplot(1,3,3)
 strat_test_set["Survived"].hist()
 strat_test_set["Pclass"].hist()
-
-pipeline = Pipeline([()])
